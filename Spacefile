@@ -1,0 +1,14 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+micros:
+  - name: pandamonium
+    src: .
+    engine: nodejs16
+    primary: true
+    commands:
+      - npm run build.types
+      - npm run build.client
+      - npm run build.server
+    include:
+      - dist
+    run: "node server/entry.express"
